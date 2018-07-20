@@ -1,0 +1,2 @@
+# mediawiki
+The FNNDSC mediawiki
