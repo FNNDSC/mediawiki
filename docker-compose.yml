@@ -7,12 +7,12 @@ services:
      - 8080:80
    links:
      - database
-   volumes:     
-     - ./html/:/var/www/html/
+       
+     - ./images/:/var/www/html/images/
      # After initial setup, download LocalSettings.php to the same directory as
      # this yaml and uncomment the following line and use compose to restart
      # the mediawiki service
-     #- ./LocalSettings.php:/var/www/html/LocalSettings.php
+     - ./LocalSettings.php:/var/www/html/LocalSettings.php
  database:
    image: fnndsc/wikidb
    restart: always     
