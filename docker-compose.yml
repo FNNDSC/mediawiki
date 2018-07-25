@@ -7,7 +7,7 @@ services:
      - 8080:80
    links:
      - database
-       
+   volumes:
      - ./images/:/var/www/html/images/
      # After initial setup, download LocalSettings.php to the same directory as
      # this yaml and uncomment the following line and use compose to restart
@@ -26,3 +26,4 @@ services:
      MYSQL_RANDOM_ROOT_PASSWORD: 0
      MYSQL_ROOT_PASSWORD: root
      MYSQL_ALLOW_EMPTY_PASSWORD: 0
+
