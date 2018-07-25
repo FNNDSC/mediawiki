@@ -1,7 +1,7 @@
 version: '3'
 services:
  mediawiki:
-   image: fnndsc/mediawiki
+   image: mediawiki
    restart: always
    ports:
      - 8080:80
@@ -14,7 +14,7 @@ services:
      # the mediawiki service
      - ./LocalSettings.php:/var/www/html/LocalSettings.php
  database:
-   image: fnndsc/wikidb
+   image: mariadb
    restart: always     
    volumes:
      - ./wikidb/:/var/lib/mysql/my_wiki/
