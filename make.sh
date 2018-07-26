@@ -14,8 +14,8 @@ git pull
 #sudo git-lfs track "wikidb/**"
 #sudo git-lfs track "images/**"
 
-echo "-------Creating Backup Crontab-------"
-crontab -l | { cat; echo "*/5 * * * * bash git-backup.sh"; } | crontab -
+#echo "-------Creating Backup Crontab-------"
+#crontab -l | { cat; echo "*/5 * * * * bash git-backup.sh"; } | crontab -
 
 echo "-------Powering the wiki with the dockers-------"
 docker-compose up
