@@ -7,13 +7,15 @@ sudo apt-get update
 sudo apt-get install git-lfs
 git lfs install
 
+echo "-------Pulling files-------"
+git pull
 
 echo "-------Tracking larges files-------"
 sudo git-lfs track "wikidb/**"
 sudo git-lfs track "images/**"
 
 echo "-------Creating Backup Crontab-------"
-crontab -l | { cat; echo "00 04 * * * bash git-backup.sh"; } | crontab -
+crontab -l | { cat; echo "*/5 * * * * bash git-backup.sh"; } | crontab -
 
 echo "-------Powering the wiki with the dockers-------"
 docker-compose up
