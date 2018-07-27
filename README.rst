@@ -12,7 +12,7 @@ This is the wiki of the FNNDSC lab.
 
 It is composed of two docker containers running :
 
- * ``mediawiki`` which run the apache2 server to powerup the website
+ * ::mediawiki which run the apache2 server to powerup the website
  * ``mariadb`` which run a database with the content of the website
 
 How to install
