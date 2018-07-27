@@ -54,7 +54,7 @@ This crontab make a save everyday at 4 AM.
 It run the ``git-backup.sh``. This script push all the content to this git repository. 
 
 If you want to make sure that it's actually running just type : 
-As a side note, if you want to shutdown temporaly the wiki you can use :
+
         ``crontab -l``
 
 NOTE : If the wiki is not powered ``/neuro/labs/grantlab/research/mediawiki/`` then you must replace the path in ``git-backup.sh`` by your actual path. 
