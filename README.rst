@@ -12,7 +12,7 @@ This is the wiki of the FNNDSC lab.
 
 It is composed of two docker containers running :
 
- * ::mediawiki which run the apache2 server to powerup the website
+ * ``mediawiki`` which run the apache2 server to powerup the website
  * ``mariadb`` which run a database with the content of the website
 
 How to install
@@ -40,7 +40,7 @@ As a side note, if you want to shutdown temporaly the wiki you can use :
 To power it again you can use :
 
         ``docker-compose up``
-NOTE : Don't forget to do it in the wiki directory
+NOTE : Don't forget to do it in the ``mediawiki`` directory
 
 
 Backup
