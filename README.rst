@@ -51,8 +51,10 @@ To perform backup, you have nothing to do. Just know that the following crontab 
 - crontab -l | { cat; echo "00 04 * * * bash git-backup.sh"; } | crontab -
 
 This crontab make a save everyday at 4 AM. 
-It run the ``git-backup.sh``. This script push all the content to this git repository. If you want to make sure that it's actually running just type : 
-        ``crontab -l``
+It run the ``git-backup.sh``. This script push all the content to this git repository. 
+
+If you want to make sure that it's actually running just type : 
+``crontab -l``
 
 NOTE : If the wiki is not powered ``/neuro/labs/grantlab/research/mediawiki/`` then you must replace the path in ``git-backup.sh`` by your actual path. 
 
