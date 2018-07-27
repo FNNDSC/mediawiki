@@ -3,6 +3,6 @@
 
 jour=$(date +%Y%m%d)
 
-git add -A
-git commit -m "aaaAutomatic daily save at $jour"
-git push
+cd /neuro/labs/grantlab/research/mediawiki && git add -A
+cd /neuro/labs/grantlab/research/mediawiki && git commit -m "aaaAutomatic daily save at $jour"
+cd /neuro/labs/grantlab/research/mediawiki && git push
