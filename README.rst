@@ -24,7 +24,7 @@ https://docs.docker.com/get-started/
 
 You have to git clone this repository : 
 
-        git clone https://github.com/FNNDSC/mediawiki.git
+        ``git clone https://github.com/FNNDSC/mediawiki.git``
 
 Then just execute the ``make.sh`` script with : 
 
@@ -32,7 +32,7 @@ Then just execute the ``make.sh`` script with :
 
 It will powerup the wiki on the following address :
 
- - http://yourIPaddress:8080
+        http://yourIPaddress:8080
 
 As a side note, if you want to shutdown temporaly the wiki you can use :
 
@@ -46,12 +46,15 @@ NOTE : Don't forget to do it in the wiki directory
 Backup
 ------
 
-To perform backup, the following crontab is setup into the installation script ``make.sh``
+To perform backup, you have nothing to do. Just know that the following crontab is setup into the installation script ``make.sh``
 
-- ``crontab -l | { cat; echo "00 04 * * * bash git-backup.sh"; } | crontab -``
+- crontab -l | { cat; echo "00 04 * * * bash git-backup.sh"; } | crontab -
 
 This crontab make a save everyday at 4 AM. 
 It run the ``git-backup.sh``. This script push all the content to this git repository.
+
+If you want to make sure that it's actually running just type : 
+        ``crontab -l``
 
 NOTE : If the wiki is not powered ``/neuro/labs/grantlab/research/mediawiki/`` then you must replace the path in ``git-backup.sh`` by your actual path. 
 
