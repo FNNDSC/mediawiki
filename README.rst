@@ -28,20 +28,18 @@ You have to git clone this repository :
 
 Then just execute the ``make.sh`` script with : 
 
-        bash make.sh
+        ``bash make.sh``
 
 It will powerup the wiki on the following address :
 
  - http://yourIPaddress:8080
 
 As a side note, if you want to shutdown temporaly the wiki you can use :
-.. code:: bash
 
-        docker-compose down
+        ``docker-compose down``
 To power it again you can use :
-.. code:: bash
 
-        docker-compose up
+        ``docker-compose up``
 NOTE : Don't forget to do it in the wiki directory
 
 
@@ -49,9 +47,8 @@ Backup
 ------
 
 To perform backup, the following crontab is setup into the installation script ``make.sh``
-.. code:: bash
 
-        crontab -l | { cat; echo "00 04 * * * bash git-backup.sh"; } | crontab -
+- ``crontab -l | { cat; echo "00 04 * * * bash git-backup.sh"; } | crontab -``
 
 This crontab make a save everyday at 4 AM. 
 It run the ``git-backup.sh``. This script push all the content to this git repository.
