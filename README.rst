@@ -79,6 +79,7 @@ List of volumes :
 - ``wikidb`` is the folder who contain the data of the wiki, it is link to the ``mariadb`` docker.
 
 There is two important configuration files :
+
  - ``LocalSettings.php``
  - ``docker-compose.yml``
 
