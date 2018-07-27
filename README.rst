@@ -23,10 +23,12 @@ You need a docker environment set up. If you don't have, please follow the part 
 https://docs.docker.com/get-started/
 
 You have to git clone this repository : 
-::        git clone https://github.com/FNNDSC/mediawiki.git
+
+        git clone https://github.com/FNNDSC/mediawiki.git
 
 Then just execute the ``make.sh`` script with : 
-::  bash make.sh
+
+        bash make.sh
 
 It will powerup the wiki on the following address :
 
