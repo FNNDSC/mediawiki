@@ -17,7 +17,6 @@ git pull
 #sudo git-lfs track "images/**"
 
 #echo "-------Creating Backup Crontab-------"
-#cd /neuro/labs/grantlab/research/mediawiki
 #crontab -l | { cat; echo "*/5 * * * * bash git-backup.sh"; } | crontab -
 
 echo "-------Powering the wiki with the dockers-------"
