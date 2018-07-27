@@ -91,7 +91,10 @@ Potential problems
 ------------------
 
 If the wiki strat growing a lot, big files will potentially be a problem for future backup on github. A solution that can be condiderate is using ``Git Large Files Storage`` : 
+
 - https://git-lfs.github.com/
+
 In ``make.sh`` steps are already written as comment. Keep in mind that this solution might have fees. 
+
 
 You should keep in mind that the owner of the files created by the docker is not you. This might rise some problem in the future. Aslo, the contrary is also true, the docker might not have the necessary right to modify the wiki in some servers directory.
