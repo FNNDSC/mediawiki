@@ -16,7 +16,7 @@ It is composed of two docker containers running :
  - ``mariadb`` which run a database with the content of the website
 
 How to install
-------------
+--------------
 
 You need a docker environment set up. If you don't have, please follow the part 1 of docker tutorial : 
 
@@ -48,7 +48,7 @@ NOTE : Don't forget to do it in the wiki directory
 
 
 Backup
-------------
+------
 
 To perform backup, the following crontab is setup into the installation script ``make.sh``
 .. code:: bash
@@ -62,7 +62,7 @@ NOTE : If the wiki is not powered ``/neuro/labs/grantlab/research/mediawiki/`` t
 
 
 Important reminder
-----------------------
+------------------
 
 There are some detail you must take into consideration to run the wiki:
 
@@ -71,7 +71,7 @@ There are some detail you must take into consideration to run the wiki:
  - You should not forget to delete the crontab if you shutdown the wiki. 
 
 How does it work and important configuration files
-----------------------
+--------------------------------------------------
 
 This wiki is base on two official docker images, ``mediawiki`` and ``mariadb``. All the change between this wiki and any other are volume mapped. 
 List of volumes : 
@@ -88,7 +88,7 @@ The second one is about parameters to run the containers. It contains the volume
 
 
 Potential problems
-----------------------
+------------------
 
 If the wiki strat growing a lot, big files will potentially be a problem for future backup on github. A solution that can be condiderate is using ``Git Large Files Storage`` : 
 - https://git-lfs.github.com/
