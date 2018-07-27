@@ -1,6 +1,6 @@
 #!/bin/bash
 #Bash script to save and push to git the FNNDSC mediawiki
-path= '/neuro/labs/grantlab/research/mediawiki'
+path=/neuro/labs/grantlab/research/mediawiki
 jour=$(date +%Y%m%d)
 cd $path && docker-compose down
 cd $path && git add -A
