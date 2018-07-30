@@ -18,7 +18,7 @@ It is composed of two docker containers running:
 How to install
 --------------
 
-You need a docker environment set up. If you don't have, please follow the part 1 of docker tutorial: 
+You need a docker environment set up. If you don't have it, please follow the part 1 of docker tutorial: 
 
 https://docs.docker.com/get-started/
 
@@ -26,18 +26,18 @@ You have to git clone this repository:
 
         ``git clone https://github.com/FNNDSC/mediawiki.git``
 
-Then just execute the ``make.sh`` script with: 
+Then execute the ``make.sh`` script with: 
 
         ``bash make.sh``
 
-It will power up the wiki on the following address:
+It will then power up the wiki on the following address:
 
         http://yourIPaddress:8080
 
-As a side note, if you want to shutdown temporary the wiki you can use:
+As a side note, if you want to shutdown the wiki temporarily you can use:
 
         ``docker-compose down``
-To power it again you can use:
+To power it up again you can use:
 
         ``docker-compose up``
 NOTE: Don't forget to do it in the ``mediawiki`` directory
@@ -50,7 +50,7 @@ To perform backup, you have nothing to do. Just know that the following crontab 
 
 - crontab -l | { cat; echo "00 04 * * * bash git-backup.sh"; } | crontab -
 
-This crontab makes a save every day at 4 AM. 
+This crontab saves every day at 4 AM. 
 It runs the ``git-backup.sh``. This script pushs all the content to this git repository. 
 
 If you want to make sure that it's actually running just type: 
@@ -72,10 +72,10 @@ There are some details you must take into consideration to run the wiki:
 How does it work and important configuration files
 --------------------------------------------------
 
-This wiki is base on two official docker images, ``mediawiki`` and ``mariadb``. All the change between this wiki and any other are volume mapped. 
+This wiki is based on two official docker images, ``mediawiki`` and ``mariadb``. All the changes between this wiki and any other are volume mapped. 
 List of volumes: 
 - ``images`` is the folder which contains the images of the wiki, it is link to the ``mediawiki`` docker.
-- ``LocalSettings.php`` is a file of configuration of the wiki website, it is link to the ``mediawiki`` docker.
+- ``LocalSettings.php`` is a file of configurations for the wiki website, it is link to the ``mediawiki`` docker.
 - ``wikidb`` is the folder which contains the data of the wiki, it is link to the ``mariadb`` docker.
 
 There are two important configuration files:
@@ -90,7 +90,7 @@ The second one is about parameters to run the containers. It contains the volume
 Potential problems
 ------------------
 
-If the wiki strat growing a lot, big files will potentially be a problem for future backup on github. A solution that can be considerate is using ``Git Large Files Storage``: 
+If the wiki strat gets larger, big files will potentially be a problem for future backup on github. A solution that can be considered is to use ``Git Large Files Storage``: 
 
 - https://git-lfs.github.com/
 
