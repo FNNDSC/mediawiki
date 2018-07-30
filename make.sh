@@ -20,6 +20,6 @@ path=$(cd $( dirname ${BASH_SOURCE[0]}) && pwd )
 chmod +x ./git-backup.sh
 crontab -l | { cat; echo "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"; } | crontab -
 crontab -l | { cat; echo "* * * * * /bin/bash $path/git-backup.sh &> /var/log/backuplog.log 2>&1"; } | crontab -
-#>sss
+#>ssswww
 #echo "-------Powering the wiki with the dockers-------"
 #docker-compose up
