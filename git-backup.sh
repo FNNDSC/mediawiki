@@ -4,7 +4,7 @@ pathscript=/neuro/labs/grantlab/research/mediawiki
 jour=$(date +%Y%m%d)
 #cd $pathscript && docker-compose down
 echo "test" >> /var/log/backuplog.log
-cd $pathscript && git add -A >> /var/log/backuplog.log
-cd $pathscript && git commit -m "Automatic daily save on $jour" >> /var/log/backuplog.log
-cd $pathscript && git push >> /var/log/backuplog.log
+git -C $pathscript add -A >> /var/log/backuplog.log
+git -C $pathscript commit -m "Automatic daily save on $jour" >> /var/log/backuplog.log
+git -C $pathscript push >> /var/log/backuplog.log
 #cd $pathscript && docker-compose up
