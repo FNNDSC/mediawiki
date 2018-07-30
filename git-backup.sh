@@ -6,5 +6,4 @@ jour=$(date +%Y%m%d)
 cd $pathscript && git add -A
 cd $pathscript && git commit -m "Automatic daily save on $jour"
 cd $pathscript && git push
-cd $pathscript && touch test.txt
 #cd $pathscript && docker-compose up
