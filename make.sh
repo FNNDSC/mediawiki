@@ -8,16 +8,17 @@
 #git lfs install
 
 echo "-------Pulling files-------"
-git pull
-git fetch --all
-git reset --hard origin/master
+#git pull
+#git fetch --all
+#git reset --hard origin/master
 
 #echo "-------Tracking larges files-------"
 #sudo git-lfs track "wikidb/**"
 #sudo git-lfs track "images/**"
 
 echo "-------Creating Backup Crontab-------"
-crontab -l | { cat; echo "00 03 * * * bash git-backup.sh"; } | crontab -
+path=$(cd $( dirname ${BASH_SOURCE[0]}) && pwd )
+crontab -l | { cat; echo "* * * * * bash $path/git-backup.sh"; } | crontab -
 
-echo "-------Powering the wiki with the dockers-------"
-docker-compose up
+#echo "-------Powering the wiki with the dockers-------"
+#docker-compose up
