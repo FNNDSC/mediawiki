@@ -7,4 +7,5 @@ echo "test" >> /var/log/backuplog.log
 git -C $pathscript add -A >> /var/log/backuplog.log
 git -C $pathscript commit -m "Automatic daily save on $jour" >> /var/log/backuplog.log
 git -C $pathscript push origin master >> /var/log/backuplog.log
+ssh -T git@github.com
 #cd $pathscript && docker-compose up
