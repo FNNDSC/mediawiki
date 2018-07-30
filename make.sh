@@ -21,5 +21,5 @@ chmod +x ./git-backup.sh
 crontab -l | { cat; echo "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"; } | crontab -
 crontab -l | { cat; echo "* * * * * /bin/bash $path/git-backup.sh"; } | crontab -
 
-#echo "-------Powering the wiki with the dockers-------"
+echo "-------Powering the wiki with the dockers-------"
 #docker-compose up
