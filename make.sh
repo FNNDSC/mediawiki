@@ -18,7 +18,7 @@ echo "-------Pulling files-------"
 
 echo "-------Creating Backup Crontab-------"
 path=$(cd $( dirname ${BASH_SOURCE[0]}) && pwd )
-crontab -l | { cat; echo "* * * * * bash $path/git-backup.sh"; } | crontab -
+crontab -l | { cat; echo "* * * * * /bin/bash $path/git-backup.sh"; } | crontab -
 
 #echo "-------Powering the wiki with the dockers-------"
 #docker-compose up
