@@ -7,9 +7,9 @@
 #git lfs install
 
 echo "-------Pulling files-------"
-#git pull
-#git fetch --all
-#git reset --hard origin/master
+git pull
+git fetch --all
+git reset --hard origin/master
 
 #echo "-------Tracking larges files-------"
 #sudo git-lfs track "wikidb/**"
@@ -22,4 +22,4 @@ crontab -l | { cat; echo "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 crontab -l | { cat; echo "00 04 * * * sudo -u $(whoami) $path/git-backup.sh"; } | crontab -
 
 echo "-------Powering the wiki with the dockers-------"
-#docker-compose up
+docker-compose up
