@@ -24,7 +24,7 @@ https://docs.docker.com/get-started/
 
 You have to git clone this repository: 
 
-        ``git clone https://github.com/FNNDSC/mediawiki.git``
+        ``git clone git@github.com:FNNDSC/mediawiki.git``
 
 Then execute the ``make.sh`` script with: 
 
@@ -61,7 +61,7 @@ Some logs are stocked in /tmp/backup.log. But if you want to have more detail yo
 
 If you have backup problem, make sure the ``git-backup.sh`` is an executable file. It should be done by the installation script ``make.sh`` but if not, use :
 
-- chmod +x git-backup.sh
+        ``chmod +x git-backup.sh``
 
 
 Important reminder
