@@ -57,7 +57,7 @@ If you want to make sure that it's actually running just type:
 
         ``crontab -l``
 
-NOTE: If the wiki is not powered ``/neuro/labs/grantlab/research/mediawiki/`` then you must replace the path in ``git-backup.sh`` by your actual path. 
+NOTE: If the wiki is not powered in ``/neuro/labs/grantlab/research/mediawiki/`` then you must replace the path in ``git-backup.sh`` by your actual path. 
 
 
 Important reminder
