@@ -22,7 +22,7 @@ path=$(cd $( dirname ${BASH_SOURCE[0]}) && pwd )
 chmod +x ./git-backup.sh
 crontab -l | { cat; echo "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"; } | crontab -
 crontab -l | { cat; echo "* * * * * $path/git-backup.sh"; } | crontab -
-#If you have update issues, who want to try to modify the crontab with
+#If you have update issues, you can try to modify the crontab with
 #crontab -l | { cat; echo "* * * * * sudo -u $(whoami) $path/git-backup.sh"; } | crontab -
 
 echo "-------Powering the wiki with the dockers-------"
