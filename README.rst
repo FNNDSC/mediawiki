@@ -48,7 +48,7 @@ Backup
 
 To perform backup, you have nothing to do. Just know that the following crontab is setup into the installation script ``make.sh``
 
-- crontab -l | { cat; echo "00 04 * * * bash git-backup.sh"; } | crontab -
+- crontab -l | { cat; echo "00 04 * * * $path/git-backup.sh"; } | crontab -
 
 This crontab saves every day at 4 AM. 
 It runs the ``git-backup.sh``. This script pushs all the content to this git repository. 
