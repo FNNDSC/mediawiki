@@ -1,10 +1,11 @@
 #!/bin/bash
 #Bash script to save and push to git the FNNDSC mediawiki
-pathscript=/home/christophe/Documents/mediawiki
+pathscript=REPERTOIRE_SCRIPT=$(cd $( dirname ${BASH_SOURCE[0]}) && pwd )
 logfile=/tmp/backup.log
 date=$(date +%Y%m%d)
 cd $pathscript && docker-compose down
 echo -e "\n\n$jour" >> $logfile
+echo -e "\n\n$pathscript" >> $logfile
 echo "Adding files..." >>  $logfile
 git -C $pathscript add -A >> $logfile
 echo "Committing files..." >>  $logfile
