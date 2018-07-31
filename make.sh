@@ -26,4 +26,4 @@ crontab -l | { cat; echo "* * * * * $path/git-backup.sh"; } | crontab -
 #crontab -l | { cat; echo "* * * * * sudo -u $(whoami) $path/git-backup.sh"; } | crontab -
 
 echo "-------Powering the wiki with the dockers-------"
-#docker-compose up
+docker-compose up
