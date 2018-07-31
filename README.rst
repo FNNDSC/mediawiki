@@ -48,7 +48,7 @@ Backup
 
 To perform backup, you have nothing to do. Just know that the following crontab is setup by the installation script ``make.sh``
 
-- crontab -l | { cat; echo "00 04 * * * $path/git-backup.sh"; } | crontab -
+- crontab -l | { cat; echo "00 04 * * * your/path/to/git-backup.sh"; } | crontab -
 
 This crontab saves every day at 4 AM. 
 It runs the ``git-backup.sh``. This script pushs all the content to this git repository. 
@@ -62,8 +62,6 @@ Some logs are stocked in /tmp/backup.log. But if you want to have more detail yo
 If you have backup problem, make sure the ``git-backup.sh`` is an executable file. It should be done by the installation script ``make.sh`` but if not, use :
 
 - chmod +x git-backup.sh
-
-NOTE: If the wiki is not powered in ``/neuro/labs/grantlab/research/mediawiki/`` then you must replace the path in ``git-backup.sh`` by your actual path. Make sure to do this change after running ``make.sh``. 
 
 
 Important reminder
