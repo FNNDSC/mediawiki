@@ -26,6 +26,8 @@ You have to git clone this repository:
 
         ``git clone git@github.com:FNNDSC/mediawiki.git``
 
+If you can't perform this commamd, you have to create an ssh key and link it to your git account which have permisions on this repository.
+
 Then execute the ``make.sh`` script with: 
 
         ``bash make.sh``
