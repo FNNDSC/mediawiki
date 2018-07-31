@@ -8,10 +8,10 @@ echo "-------Initialization-------"
 #sudo apt-get install git-lfs
 #git lfs install
 
-#echo "-------Pulling files latest files-------"
-#git pull
-#git fetch --all
-#git reset --hard origin/master
+echo "-------Pulling files latest files-------"
+git pull
+git fetch --all
+git reset --hard origin/master
 
 #echo "-------Tracking larges files-------"
 #sudo git-lfs track "wikidb/**"

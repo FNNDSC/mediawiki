@@ -63,7 +63,7 @@ If you have backup problem, make sure the ``git-backup.sh`` is an executable fil
 
 - chmod +x git-backup.sh
 
-NOTE: If the wiki is not powered in ``/neuro/labs/grantlab/research/mediawiki/`` then you must replace the path in ``git-backup.sh`` by your actual path. 
+NOTE: If the wiki is not powered in ``/neuro/labs/grantlab/research/mediawiki/`` then you must replace the path in ``git-backup.sh`` by your actual path. Make sure to do this change after running ``make.sh``. 
 
 
 Important reminder
