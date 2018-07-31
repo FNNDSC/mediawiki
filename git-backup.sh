@@ -1,6 +1,6 @@
 #!/bin/bash
 #Bash script to save and push to git the FNNDSC mediawiki
-pathscript=REPERTOIRE_SCRIPT=$(cd $( dirname ${BASH_SOURCE[0]}) && pwd )
+pathscript=$(cd $( dirname ${BASH_SOURCE[0]}) && pwd )
 logfile=/tmp/backup.log
 date=$(date +%Y%m%d)
 cd $pathscript && docker-compose down
