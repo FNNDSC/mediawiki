@@ -10,18 +10,19 @@ NAME
 ARGS
 
         [-p]
-        Force the update of your files from the github repository. This is useful if you want to make
-        sure that your are running the wiki with the last save perform on the github repository. 
-        NOTE: All the change you made since your last push will be lost 
+        Force the update of your files from the github repository. This is useful 
+        if you want to make sure that your are running the wiki with the last 
+        save performed on the github repository. 
+        NOTE: All the changes you made since your last push will be lost 
 
         [-c]
-        Create the crontab which perform a daily backup, you want to do this the first
+        Create the crontab which performs a daily backup, you want to do this the first
         time you set up the wiki. You can check your crontab running using 'crontab -l'
 
 
         [-L]
-        Perform a github large file storage. This is useful if any individual files exceed 200MB 
-        but it might create some problems.
+        Perform a github large file storage. This is useful if any individual files 
+        exceed 200MB but you might encounter some problems.
 
 
 DESCRIPTION
