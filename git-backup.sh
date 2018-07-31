@@ -8,7 +8,7 @@ echo -e "\n\n$jour" >> $logfile
 echo "Adding files..." >>  $logfile
 git -C $pathscript add -A >> $logfile
 echo "Committing files..." >>  $logfile
-git -C $pathscript commit -m "test commit" >> $logfile
+git -C $pathscript commit -m "Automatic daily save on $date" >> $logfile
 echo "Pushing files..." >>  $logfile
 git -C $pathscript push origin master >> $logfile
 echo "Done!" >>  $logfile
