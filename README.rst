@@ -30,7 +30,15 @@ If you can't perform this commamd, you have to create an ssh key and link it to 
 
 Then execute the ``make.sh`` script with: 
 
-        ``bash make.sh``
+        ``./make.sh`` 
+
+If you are running it for the first time, you might want to create a crontab to perform daily backup. Then you should use : 
+
+		``./make.sh -c`` 
+
+If it has been a long time since you powered the wiki, you might want to update your files from this repo using :
+
+		``./make.sh -p`` 
 
 It will then power up the wiki on the following address:
 
@@ -39,20 +47,22 @@ It will then power up the wiki on the following address:
 As a side note, if you want to shutdown the wiki temporarily you can use:
 
         ``docker-compose down``
+
 To power it up again you can use:
 
         ``docker-compose up``
+
 NOTE: Don't forget to do it in the ``mediawiki`` directory
 
 
 Backup
 ------
 
-To perform backup, you have nothing to do. Just know that the following crontab is setup by the installation script ``make.sh``
+To perform backup, you must run ``./make.sh -c`` once. Then, just make sure that the following crontab is set up using ``crontab -l``.
 
 - crontab -l | { cat; echo "00 04 * * * your/path/to/git-backup.sh"; } | crontab -
 
-This crontab saves every day at 4 AM. 
+This crontab saves the wiki every day at 4 AM. 
 It runs the ``git-backup.sh``. This script pushs all the content to this git repository. 
 
 If you want to make sure that it's actually running just type: 
@@ -60,11 +70,6 @@ If you want to make sure that it's actually running just type:
         ``crontab -l``
 
 Some logs are stocked in /tmp/backup.log. But if you want to have more detail yo u might want to install an MTA service.
-
-If you have backup problem, make sure the ``git-backup.sh`` is an executable file. It should be done by the installation script ``make.sh`` but if not, use :
-
-        ``chmod +x git-backup.sh``
-
 
 Important reminder
 ------------------
@@ -96,11 +101,11 @@ The second one is about parameters to run the containers. It contains the volume
 Potential problems
 ------------------
 
-If the wiki strat gets larger, big files will potentially be a problem for future backup on github. A solution that can be considered is to use ``Git Large Files Storage``: 
+If the wiki start to contain big files (over 200MB), it will potentially be a problem for future backup on github. A solution that can be considered is to use ``Git Large Files Storage``: 
 
 - https://git-lfs.github.com/
 
-In ``make.sh`` steps are already written as comment. Keep in mind that this solution might have fees. 
+In ``make.sh`` steps are already written with ``-L`` argument. Keep in mind that this solution might cause problems. 
 
 
 You should keep in mind that the owner of the files created by the docker is not you. This might rise some problem in the future. Also, the contrary might cause some problems aswell. The container might not have the necessary right to modify the wiki in some servers directory.

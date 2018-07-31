@@ -1,5 +1,5 @@
 #!/bin/bash
-#Bash script to save and push to git the FNNDSC mediawiki
+# Bash script to save and push to git the FNNDSC mediawiki
 pathscript=$(cd $( dirname ${BASH_SOURCE[0]}) && pwd )
 logfile=/tmp/backup.log
 date=$(date +%Y%m%d)
