@@ -27,7 +27,7 @@ ARGS
 
 DESCRIPTION
 
-        $0 is a script that installs and runs the FNNDSDC mediawiki
+        $0 is a script that installs and runs the FNNDSC mediawiki
         containerized.
 
 "
