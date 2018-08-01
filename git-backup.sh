@@ -67,7 +67,7 @@ if (( Gb_saveauto )) ; then
         commit="Automatic daily save on $date"
         echo "Auto daily save" >> $logfile
 else
-        echo "Manual save" >> $logfile | tee -a $logfile >> /dev/console
+        echo "Manual save" >> $logfile | tee -a $logfile > /dev/console
 fi
 
 
@@ -75,9 +75,9 @@ if (( Gb_commit )) ||  (( Gb_saveauto )); then
 
         if (( Gb_saveNOshutdown == 0)) ; then 
                 cd $pathscript && docker-compose down
-                echo -e "Save with shutdown\n" >> $logfile | tee -a $logfile >> /dev/console
+                echo -e "Save with shutdown\n" >> $logfile | tee -a $logfile > /dev/console
         else
-                echo -e "Save without shutdown\n" >> $logfile | tee -a $logfile >> /dev/console
+                echo -e "Save without shutdown\n" >> $logfile | tee -a $logfile > /dev/console
         fi
         echo -e "Date = $date" >> $logfile
         echo -e "Path = $pathscript" >> $logfile
@@ -90,7 +90,7 @@ if (( Gb_commit )) ||  (( Gb_saveauto )); then
         echo -e "Pushing files...\n" >>  $logfile
         git -C $pathscript push origin master >> $logfile
 
-        echo -e "Pushing Done!\n-----------------\n\n" >> $logfile | tee -a $logfile >> /dev/console
+        echo -e "Pushing Done!\n-----------------\n\n" >> $logfile | tee -a $logfile > /dev/console
         if (( Gb_saveNOshutdown == 0)) ; then 
                 cd $pathscript && docker-compose up
         fi
