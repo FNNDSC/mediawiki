@@ -26,7 +26,7 @@ You have to git clone this repository:
 
         ``git clone git@github.com:FNNDSC/mediawiki.git``
 
-If you can't perform this commamd, you have to create an ssh key and link it to your git account which can edit this repository.
+If you can't perform this command, you have to create an ssh key and link it to your git account which can edit this repository.
 
 Then execute the ``make.sh`` script with: 
 
@@ -50,9 +50,9 @@ As a side note, if you want to shutdown the wiki temporarily you can use:
 
 To power it up again you can use:
 
-        ``docker-compose up``
+        ``docker-compose up`` or ``./make.sh``
 
-NOTE: Don't forget to do it in the ``mediawiki`` directory
+NOTE: Don't forget to do this in the ``mediawiki`` directory.
 
 
 Backup
@@ -62,7 +62,7 @@ To perform manual backup, you can use :
 
 		``./git-backup.sh -c "Your git commit message"`` 
 
-NOTE: If the wiki is not running and you don't want to run it after the save you can use the [-s] argument
+NOTE: If the wiki is not running and you don't want to run it after the save you can use the [-s] argument.
 
 To perform automatic backup, you must run ``./make.sh -c`` once. Then, just make sure that the following crontab is set up using ``crontab -l``.
 
@@ -84,7 +84,7 @@ There are some details you must take into consideration to run the wiki:
 
  - You must be in the docker usergroup.
  - You must have a ssh key with no passphrase link to your account which performs backup.
- - You should not forget to delete the crontab if you shutdown the wiki. 
+ - You should not forget to delete the crontab if you shutdown the wiki. If you don't, the wiki will the be up by itself the next night at 4 AM.
 
 How does it work and important configuration files
 --------------------------------------------------
