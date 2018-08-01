@@ -29,6 +29,8 @@ DESCRIPTION
         on the FNNDSC github repository and power up the wiki again. 
         NOTE: To run this script you must run with a [-c] arguments.
 
+        A log file is available in /tmp/backup.log
+
 EXAMPLE
         
         ./git-backup -c \"Voici mon commit\"
@@ -67,7 +69,7 @@ if (( Gb_saveauto )) ; then
         commit="Automatic daily save on $date"
         echo "Auto daily save" >> $logfile
 else
-        echo "Manual save" >> $logfile | tee -a $logfile > /dev/console
+        echo "Manual save" >> $logfile 
 fi
 
 
@@ -75,22 +77,22 @@ if (( Gb_commit )) ||  (( Gb_saveauto )); then
 
         if (( Gb_saveNOshutdown == 0)) ; then 
                 cd $pathscript && docker-compose down
-                echo -e "Save with shutdown\n" >> $logfile | tee -a $logfile > /dev/console
+                echo -e "Save with shutdown\n" >> $logfile
         else
-                echo -e "Save without shutdown\n" >> $logfile | tee -a $logfile > /dev/console
+                echo -e "Save without shutdown\n" >> $logfile
         fi
         echo -e "Date = $date" >> $logfile
         echo -e "Path = $pathscript" >> $logfile
         echo -e "Commit = $commit\n" >> $logfile
 
-        echo "Adding files..." >> $logfile | tee -a $logfile >> /dev/console
+        echo "Adding files..." >> $logfile
         git -C $pathscript add -A >> $logfile
         echo "Committing files..." >>  $logfile
         git -C $pathscript commit -m "$commit" >> $logfile
         echo -e "Pushing files...\n" >>  $logfile
         git -C $pathscript push origin master >> $logfile
 
-        echo -e "Pushing Done!\n-----------------\n\n" >> $logfile | tee -a $logfile > /dev/console
+        echo -e "Pushing Done!\n-----------------\n\n" >> $logfile
         if (( Gb_saveNOshutdown == 0)) ; then 
                 cd $pathscript && docker-compose up
         fi
