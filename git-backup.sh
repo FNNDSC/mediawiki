@@ -9,7 +9,7 @@ NAME
 
 ARGS
 
-    	[-c] COMMIT
+        [-c] COMMIT
         Specify the commit you want to right on your backup
 
         [-s]
@@ -30,7 +30,7 @@ DESCRIPTION
         NOTE: To run this script you must run with a [-c] arguments.
 
 EXAMPLE
-		
+        
         ./git-backup -c \"Voici mon commit\"
 
 
@@ -49,7 +49,7 @@ let Gb_saveauto=0
 while getopts ac:sx option ; do
         case "$option"
         in
-                a) Gb_saveauto=1				;;
+                a) Gb_saveauto=1                ;;
                 c) Gb_commit=1
                 commit=$OPTARG                  ;;
                 s) Gb_saveNOshutdown=1          ;;
@@ -64,33 +64,39 @@ logfile=/tmp/backup.log
 date=$(date +%Y%m%d)
 
 if (( Gb_saveauto )) ; then 
-		commit="Automatic daily save on $date"
+        commit="Automatic daily save on $date"
+        echo "Auto daily save" >> $logfile
+else
+        echo "Manual save" >> $logfile 
 fi
+
 
 if (( Gb_commit )) ||  (( Gb_saveauto )); then 
 
-		if (( Gb_saveNOshutdown == 0)) ; then 
-				cd $pathscript && docker-compose down
-				echo "DOCK DOWN"
-		fi
-		echo -e "\n\n$date" >> $logfile
-		echo -e "\n\n$pathscript" >> $logfile
-		echo -e "\n\n$commit" >> $logfile
+        if (( Gb_saveNOshutdown == 0)) ; then 
+                cd $pathscript && docker-compose down
+                echo -e "Save with shutdown\n" >> $logfile
+        else
+                echo -e "Save without shutdown\n" >> $logfile
+        fi
+        echo -e "Date = $date" >> $logfile
+        echo -e "Path = $pathscript" >> $logfile
+        echo -e "Commit = $commit\n" >> $logfile
 
-		echo "Adding files..." >>  $logfile
-		git -C $pathscript add -A >> $logfile
-		echo "Committing files..." >>  $logfile
-		git -C $pathscript commit -m "$commit" >> $logfile
-		echo "Pushing files..." >>  $logfile
-		git -C $pathscript push origin master >> $logfile
+        echo "Adding files..." >> $logfile
+        git -C $pathscript add -A >> $logfile
+        echo "Committing files..." >>  $logfile
+        git -C $pathscript commit -m "$commit" >> $logfile
+        echo -e "Pushing files...\n" >>  $logfile
+        git -C $pathscript push origin master >> $logfile
 
-		echo "Done!" >>  $logfile
-		if (( Gb_saveNOshutdown == 0)) ; then 
-				cd $pathscript && docker-compose up
-				echo "DOCK up"
-		fi
-		echo "Save done!"
+        echo -e "Pushing Done!\n-----------------\n\n" >> $logfile
+        if (( Gb_saveNOshutdown == 0)) ; then 
+                cd $pathscript && docker-compose up
+        fi
 else
-	synopsis_show
+    synopsis_show
 fi
+
+
 

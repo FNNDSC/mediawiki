@@ -81,7 +81,7 @@ if (( Gb_crontab )) ; then
         echo "-------Creating Backup Crontab-------"
         path=$(cd $( dirname ${BASH_SOURCE[0]}) && pwd )
         crontab -l | { cat; echo "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"; } | crontab -
-        crontab -l | { cat; echo "00 04 * * * $path/git-backup.sh"; } | crontab -
+        crontab -l | { cat; echo "00 04 * * * $path/git-backup.sh -a"; } | crontab -
         #If you have update issues, you can try to modify the crontab with
         #crontab -l | { cat; echo "00 04 * * * sudo -u $(whoami) $path/git-backup.sh"; } | crontab -
 fi
