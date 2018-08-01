@@ -58,12 +58,18 @@ NOTE: Don't forget to do it in the ``mediawiki`` directory
 Backup
 ------
 
-To perform backup, you must run ``./make.sh -c`` once. Then, just make sure that the following crontab is set up using ``crontab -l``.
+To perform manual backup, you can use : 
 
-- crontab -l | { cat; echo "00 04 * * * your/path/to/git-backup.sh"; } | crontab -
+		``./git-backup.sh -c "Your git commit message"`` 
+
+NOTE: If the wiki is not running and you don't want to run it after the save you can use the [-s] argument
+
+To perform automatic backup, you must run ``./make.sh -c`` once. Then, just make sure that the following crontab is set up using ``crontab -l``.
+
+- crontab -l | { cat; echo "00 04 * * * your/path/to/git-backup.sh -a"; } | crontab -
 
 This crontab saves the wiki every day at 4 AM. 
-It runs the ``git-backup.sh``. This script pushs all the content to this git repository. 
+It runs the ``git-backup.sh -a``. This script pushs all the content to this git repository with a automated git message. 
 
 If you want to make sure that it's actually running just type: 
 
