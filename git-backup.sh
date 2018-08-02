@@ -22,7 +22,6 @@ ARGS
         You should not use it.
 
 
-
 DESCRIPTION
 
         $0 is a script that shutdown the wiki, run the backup 
@@ -34,7 +33,6 @@ DESCRIPTION
 EXAMPLE
         
         ./git-backup -c \"Voici mon commit\"
-
 
 "
 
@@ -99,6 +97,3 @@ if (( Gb_commit )) ||  (( Gb_saveauto )); then
 else
     synopsis_show
 fi
-
-
-
