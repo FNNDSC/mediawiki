@@ -90,6 +90,8 @@ if (( Gb_commit )) ||  (( Gb_saveauto )); then
         echo -e "Pushing files...\n" >>  $logfile
         git -C $pathscript push origin master >> $logfile
         git -C $pathscript push >> $logfile
+        
+git@github.com:FNNDSC/mediawiki.git
 
         echo -e "Pushing Done!\n-----------------\n\n" >> $logfile
         if (( Gb_saveNOshutdown == 0)) ; then 
