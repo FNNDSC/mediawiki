@@ -83,6 +83,10 @@ if (( Gb_commit )) ||  (( Gb_saveauto )); then
         echo -e "Path = $pathscript" >> $logfile
         echo -e "Commit = $commit\n" >> $logfile
 
+        export SSH_AGENT_PID=`ps -a | grep ssh-agent | grep -o -e [0-9][0-9][0-9][0-9]`
+        export SSH_AUTH_SOCK=`find /tmp/ -path '*keyring-*' -name '*ssh*' -print 2>/dev/null`
+
+
         echo "Adding files..." >> $logfile
         git -C $pathscript add -A >> $logfile
         echo "Committing files..." >>  $logfile
