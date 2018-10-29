@@ -83,8 +83,8 @@ if (( Gb_commit )) ||  (( Gb_saveauto )); then
         echo -e "Path = $pathscript" >> $logfile
         echo -e "Commit = $commit\n" >> $logfile
 
-        export SSH_AGENT_PID=`ps axww | grep -v grep | grep ssh-agent | grep -v ' -s' | awk '{print $1}'`
-        export SSH_AUTH_SOCK=`find /run/user -path '*keyring-*' -name '*ssh*' -print 2>/dev/null`
+        #export SSH_AGENT_PID=`ps axww | grep -v grep | grep ssh-agent | grep -v ' -s' | awk '{print $1}'`
+        #export SSH_AUTH_SOCK=`find /run/user -path '*keyring-*' -name '*ssh*' -print 2>/dev/null`
 
 
         echo "Adding files..." >> $logfile
@@ -93,9 +93,9 @@ if (( Gb_commit )) ||  (( Gb_saveauto )); then
         git -C $pathscript commit -m "$commit" >> $logfile
         echo -e "Pushing files...\n" >>  $logfile
         git -C $pathscript push origin master >> $logfile
-        git -C $pathscript push >> $logfile
-        git -C $pathscript push git@github.com:FNNDSC/mediawiki.git master >> $logfile
-        whoami >> $logfile
+        #git -C $pathscript push >> $logfile
+        #git -C $pathscript push git@github.com:FNNDSC/mediawiki.git master >> $logfile
+        #whoami >> $logfile
 
         echo -e "Pushing Done!\n-----------------\n\n" >> $logfile
         if (( Gb_saveNOshutdown == 0)) ; then 
